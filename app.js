@@ -49,7 +49,7 @@ const initialMessages = [
   {
     role: "assistant",
     label: "Asama assistant · Just now",
-    html: "Hi Arjun! This preview demonstrates a local hardware assistant using <strong>sample system data</strong>. It doesn't inspect this device. In a connected Linux app, the assistant would use verified system output and tell you when details aren't available.<br><br>What would you like to know?"
+    html: "Hi Arjun! This preview demonstrates a local hardware assistant using sample system data. It doesn't inspect this device. In a connected Linux app, the assistant would use verified system output and tell you when details aren't available.<br><br>What would you like to know?"
   },
   {
     role: "user",
@@ -59,7 +59,7 @@ const initialMessages = [
   {
     role: "assistant",
     label: "Asama assistant · 10:42 AM",
-    html: "In this sample, the system reports <strong>16 GB of RAM</strong> across 2 memory slots, both in use. The motherboard's maximum supported capacity isn't included in this sample, so the upgrade limit can't be confirmed.<span class=\"data-footnote\">Illustrative sample output · A live app would read system data and report its source</span>"
+    html: "In this sample, the system reports <strong>16 GB of RAM across 2 memory slots, both in use</strong>. The motherboard's maximum supported capacity isn't included in this sample, so the upgrade limit can't be confirmed.<span class=\"data-footnote\">Illustrative sample output · A live app would read system data and report its source</span>"
   }
 ];
 let hardwareConversation = [...initialMessages];
@@ -543,16 +543,16 @@ function submitPost(event) {
 function getHardwareAnswer(question) {
   const q = question.toLowerCase();
   if (q.includes("ram") || q.includes("memory") || q.includes("upgrade")) {
-    return "The <strong>sample data</strong> shows 16 GB of installed memory, with 2 of 2 slots in use. It doesn't include the motherboard's maximum supported capacity, so I can't confirm the upgrade limit. Please check the device service manual before planning an upgrade.<span class=\"data-footnote\">Illustrative sample only · No live system inspection is connected</span>";
+    return "The <strong>system has 16 GB of installed memory, with 2 of 2 slots in use</strong>. It doesn't include the motherboard's maximum supported capacity, so I can't confirm the upgrade limit. Please check the device service manual before planning an upgrade.<span class=\"data-footnote\">Illustrative sample only · No live system inspection is connected</span>";
   }
   if (q.includes("ssd") || q.includes("storage") || q.includes("drive") || q.includes("disk")) {
-    return "The <strong>sample data</strong> shows a 512 GB NVMe SSD. NVMe is a protocol commonly used by SSDs connected over PCIe. I don't have information here to confirm the exact drive model.<span class=\"data-footnote\">Illustrative sample only · No live system inspection is connected</span>";
+    return "The system has a <strong>512 GB NVMe SSD</strong>. NVMe is a protocol commonly used by SSDs connected over PCIe. I don't have information here to confirm the exact drive model.<span class=\"data-footnote\">Illustrative sample only · No live system inspection is connected</span>";
   }
   if (q.includes("processor") || q.includes("cpu") || q.includes("core")) {
-    return "The <strong>sample data</strong> lists an Intel Core i7, 12th generation, with 10 cores. It doesn't include an exact SKU, so I can't reliably provide the model number.<span class=\"data-footnote\">Illustrative sample only · No live system inspection is connected</span>";
+    return "The processor is an <strong>Intel Core i7 (12th generation, 10 cores)</strong>. It doesn't include an exact SKU, so I can't reliably provide the model number.<span class=\"data-footnote\">Illustrative sample only · No live system inspection is connected</span>";
   }
   if (q.includes("gpu") || q.includes("graphics") || q.includes("video")) {
-    return "The <strong>sample data</strong> lists Intel Iris Xe integrated graphics. Integrated graphics typically share system memory; this demo data doesn't establish whether your actual device has a dedicated GPU.<span class=\"data-footnote\">Illustrative sample only · No live system inspection is connected</span>";
+    return "The graphics are <strong>Intel Iris Xe integrated graphics</strong>. Integrated graphics typically share system memory; this demo data doesn't establish whether your actual device has a dedicated GPU.<span class=\"data-footnote\">Illustrative sample only · No live system inspection is connected</span>";
   }
   return "I don't have a matching data source for that question in this preview. It demonstrates sample answers for memory, storage, processor, and graphics; it does not inspect your device. Try asking about one of those sample components.";
 }
